@@ -1,0 +1,74 @@
+{
+ "model": "feedback",
+ "repo": "LM_2020_feedback-transformer",
+ "target_repo": "LM_Dec_Long_Feedback",
+ "category": "Long",
+ "upstream": "lucidrains/feedback-transformer-pytorch (MIT)",
+ "unified": [
+  "seq_len (step) 2, mem_len 256 (upstream defaults)",
+  "trained in micro-batches of 2 with gradient accumulation (same update; the token-by-token recurrence keeps a long graph and does not fit batch 16 x 512 in 8 GB)"
+ ],
+ "torch": "2.5.1+cu124",
+ "gpu": "NVIDIA GeForce RTX 3070 Ti",
+ "stage": "scaling",
+ "started": "2026-10-19 14:23:49",
+ "smoke": false,
+ "rows": [
+  {
+   "len": 512,
+   "train": {
+    "peak_mb": 809.4,
+    "ms": 5026.8
+   },
+   "infer": {
+    "peak_mb": 49.1,
+    "ms": 2044.6
+   }
+  },
+  {
+   "len": 1024,
+   "train": {
+    "peak_mb": 1658.4,
+    "ms": 10169.3
+   },
+   "infer": {
+    "peak_mb": 52.9,
+    "ms": 4205.0
+   }
+  },
+  {
+   "len": 2048,
+   "train": {
+    "peak_mb": 3476.4,
+    "ms": 20531.3
+   },
+   "infer": {
+    "peak_mb": 60.4,
+    "ms": 8454.0
+   }
+  },
+  {
+   "len": 4096,
+   "train": {
+    "peak_mb": 7112.4,
+    "ms": 42510.2
+   },
+   "infer": {
+    "peak_mb": 75.4,
+    "ms": 16894.1
+   }
+  },
+  {
+   "len": 8192,
+   "train": {
+    "peak_mb": 14384.5,
+    "ms": 85727.8
+   },
+   "infer": {
+    "peak_mb": 105.4,
+    "ms": 33729.2
+   }
+  }
+ ],
+ "seconds": 707.0
+}

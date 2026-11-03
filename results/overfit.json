@@ -1,0 +1,24 @@
+{
+ "model": "feedback",
+ "repo": "LM_2020_feedback-transformer",
+ "target_repo": "LM_Dec_Long_Feedback",
+ "category": "Long",
+ "upstream": "lucidrains/feedback-transformer-pytorch (MIT)",
+ "unified": [
+  "seq_len (step) 2, mem_len 256 (upstream defaults)",
+  "trained in micro-batches of 2 with gradient accumulation (same update; the token-by-token recurrence keeps a long graph and does not fit batch 16 x 512 in 8 GB)"
+ ],
+ "torch": "2.5.1+cu124",
+ "gpu": "NVIDIA GeForce RTX 3070 Ti",
+ "stage": "overfit",
+ "started": "2026-10-19 14:38:30",
+ "smoke": false,
+ "first_ce": 5.727529048919678,
+ "last_ce": 0.08484706282615662,
+ "passed": true,
+ "pass_loss": 0.5,
+ "steps": 400,
+ "seconds": 2085.6,
+ "lr": 0.001,
+ "note": "overfit uses Adam 1e-3 on 4 x 256 bytes; only an implementation check"
+}

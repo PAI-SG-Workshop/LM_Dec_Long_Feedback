@@ -1,0 +1,39 @@
+{
+ "model": "feedback",
+ "repo": "LM_2020_feedback-transformer",
+ "target_repo": "LM_Dec_Long_Feedback",
+ "category": "Long",
+ "upstream": "lucidrains/feedback-transformer-pytorch (MIT)",
+ "unified": [
+  "seq_len (step) 2, mem_len 256 (upstream defaults)",
+  "trained in micro-batches of 2 with gradient accumulation (same update; the token-by-token recurrence keeps a long graph and does not fit batch 16 x 512 in 8 GB)"
+ ],
+ "torch": "2.5.1+cu124",
+ "gpu": "NVIDIA GeForce RTX 3070 Ti",
+ "stage": "check",
+ "started": "2026-10-19 14:22:00",
+ "smoke": false,
+ "params": 22851079,
+ "causality": {
+  "causal": true,
+  "uses_input": true,
+  "worst_leak": 0.0,
+  "min_effect": 2.149477958679199,
+  "logit_scale": 2.5229228006134035,
+  "length": 256,
+  "positions": [
+   17,
+   101,
+   200
+  ]
+ },
+ "data_checks": [
+  "enwik8 train bytes  90,000,000 expected  90,000,000 OK",
+  "enwik8 valid bytes   5,000,000 expected   5,000,000 OK",
+  "enwik8 test  bytes   5,000,000 expected   5,000,000 OK",
+  "enwik8 distinct byte values in first 10M train bytes: 200 (vocab 256)",
+  "recall L=512 random gap: 16 answers/sample, keys/values/distractors disjoint OK",
+  "recall L=512 max gap: 16 answers/sample, keys/values/distractors disjoint OK"
+ ],
+ "seconds": 6.0
+}

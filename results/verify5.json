@@ -1,0 +1,29 @@
+{
+ "model": "feedback",
+ "repo": "LM_2020_feedback-transformer",
+ "target_repo": "LM_Dec_Long_Feedback",
+ "category": "Long",
+ "upstream": "lucidrains/feedback-transformer-pytorch (MIT)",
+ "unified": [
+  "seq_len (step) 2, mem_len 256 (upstream defaults)",
+  "trained in micro-batches of 2 with gradient accumulation (same update; the token-by-token recurrence keeps a long graph and does not fit batch 16 x 512 in 8 GB)"
+ ],
+ "torch": "2.5.1+cu124",
+ "gpu": "NVIDIA GeForce RTX 3070 Ti",
+ "stage": "verify5",
+ "started": "2026-10-21 15:13:30",
+ "smoke": false,
+ "rows": {
+  "512": {
+   "normal": 0.016357421875,
+   "values": 0.014892578125,
+   "keys": 0.014404296875
+  },
+  "2048": {
+   "normal": 0.013671875,
+   "values": 0.01416015625,
+   "keys": 0.013916015625
+  }
+ },
+ "seconds": 4053.7
+}
